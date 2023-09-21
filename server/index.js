@@ -23,10 +23,12 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-	cors({
-		origin:"http://localhost:3000",
-		credentials:true,
-	})
+	cors(
+	// 	{
+	// 	origin:"http://localhost:3000",
+	// 	credentials:true,
+	// }
+	)
 )
 
 app.use(
@@ -55,7 +57,7 @@ app.get("/", (req, res) => {
 		success:true,
 		message:'Your server is up and running....'
 	});
-});
+});	
 
 app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
